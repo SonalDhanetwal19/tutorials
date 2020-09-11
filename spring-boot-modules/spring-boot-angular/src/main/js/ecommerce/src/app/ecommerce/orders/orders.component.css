@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Modak');
+
+:root {
+   --green-color-h: 81;
+   --green-color-s: 50%;
+   --green-color-l: 41%;
+
+   --red-color-h: 2;
+   --red-color-s: 50%;
+   --red-color-l: 45%;
+
+   --blue-color-h: 183;
+   --blue-color-s: 49%;
+   --blue-color-l: 27%;
+
+   --green-color: hsl(var(--green-color-h), var(--green-color-s), var(--green-color-l));
+   --green-color-10: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 5%));
+   --green-color-20: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 10%));
+   --green-color-30: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 15%));
+   --green-color-40: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 20%));
+    --green-color-50: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 25%));
+    --green-color-60: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 30%));
+    --green-color-70: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 35%));
+    --green-color-80: hsl(var(--green-color-h), var(--green-color-s), calc(var(--green-color-l) + 40%));
+
+    --red-color: hsl(var(--red-color-h), var(--red-color-s), var(--red-color-l));
+    --red-color-10: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 5%));
+    --red-color-20: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 10%));
+    --red-color-30: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 15%));
+    --red-color-40: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 20%));
+    --red-color-50: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 25%));
+    --red-color-60: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 30%));
+    --red-color-70: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 35%));
+    --red-color-80: hsl(var(--red-color-h), var(--red-color-s), calc(var(--red-color-l) + 40%));
+
+    --blue-color: hsl(var(--blue-color-h), var(--blue-color-s), var(--blue-color-l));
+    --blue-color-10: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 5%));
+    --blue-color-20: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 10%));
+    --blue-color-30: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 15%));
+    --blue-color-40: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 20%));
+    --blue-color-50: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 25%));
+    --blue-color-60: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 30%));
+    --blue-color-70: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 35%));
+    --blue-color-80: hsl(var(--blue-color-h), var(--blue-color-s), calc(var(--blue-color-l) + 40%));
+
+
+  /* App Theme / Brand */
+  --primary-color: var(--green-color-10);
+  --primary-border-color: var(--green-color-10);
+  --primary-hover-color: var(--green-color);
+}
+#canvas{
+  /* border: solid 1px blue; */
+  /* width: 100vw;
+  height:100vw; */
+  width: calc(var(--vw, 1vw) * 30);
+
+  /* max-width: 700px; */
+
+}
+
+
+
+.instruction {
+  font-family: 'Modak', cursive;
+  position: relative;
+  right: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.selector{
+  position: absolute;
+  width: 0;
+  z-index: 2000;
+  height: 0;
+  border-left: calc(4.2 * var(--vw, 1vw)) solid transparent;
+  border-right: calc(4.2 * var(--vw, 1vw)) solid transparent;
+  border-top:  calc(7.14 * var(--vw, 1vw)) solid #000099;
+  left: calc(50% - calc(4.2 * var(--vw, 1vw)));
+  top: -10px;
+}
+
+.spin-the-wheel {
+  cursor: pointer;
+  bottom:0;
+  right:0;
+  left:0;
+}
+
+.outer {
+
+ /*position:relative;
+ Text-align:left;
+ float:left;
+  width:20%;
+  height: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: left;
+  display: flex;*/
+}
+.box {
+    position: absolute;
+    display: flex;
+    justify-self: left;
+    align-self: left;
+    width: 50%;
+    height: 135%;
+    right: 100%;
+    top: 20%;
+
+}
+
+.container{
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: flex-start;
+  right: 00%;
+  top: -15%;
+  /* width:100%; */
+  margin: auto;
+  /* overflow: hidden; */
+  /* width: 700px; */
+  overflow: hidden;
+}
+
+/*.container.btn-holder {
+  justify-content: flex-center;
+  display: flex;*/
+ /* bottom: 1px;
+  *//*position: relative;*//*
+  position: absolute;
+  width: 90%;
+  *//*margin-top:90%*//*
+  *//*left: 3 px;*//*
+ *//* right: 10%;
+  *//*center: 50%;*//*
+}*/
+#canvas{
+  position: relative;
+}
+
+.today-lunch {
+  display: none;
+  overflow: hidden;
+}
+
+.choosen.today-lunch, .slide_in_fwd_center.today-lunch {
+  /* transition: height ease-in-out 0.2s ; */
+  font-family: 'Modak', cursive;
+  display: inline-block;
+  overflow: overlay;
+  font-size: calc(3 * var(--vw, 1vw));
+  color: goldenrod;
+  background-color: #00000085;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  width: 80%;
+  top: 50px;
+  /* left: 10%;
+  right: 10%; */
+  /* left: calc(calc(var(--vw, 1vw) * 100) / 10); */
+  transform: translate(-50%, 0);
+}
+
+.button
+{
+background: var(--primary-color);
+}
+
+.settings {
+  margin:10px;
+  float: right;
+}
+
+
+
+/* keyframes animation
+ * ----------------------------------------------
+ * Generated by Animista on 2019-5-8 11:15:45
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+
+.slide_in_fwd_center {
+	-webkit-animation: slide-in-fwd-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-in-fwd-center
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}

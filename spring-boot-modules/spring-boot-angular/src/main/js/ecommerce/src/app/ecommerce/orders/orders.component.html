@@ -1,13 +1,57 @@
-<h2 class="text-center">ORDER</h2>
+<div class="instruction" style="Text-align:left;float:left;">
+    Click to spin the wheel!
+</div>
+
+<div class="box" id = "left" style=" border: 1px solid black; ">
+<div class="container" id = "inner" style="display: grid; border: 1px solid white; ">
+    <div class="selector"></div>
+    <canvas class="spin-the-wheel" #myCanvas id="canvas" width="700" height="700" style="font-size: 10px" ></canvas>
+
+<!--    <div [ngClass]="{slide_in_fwd_center: choosen}" class="today-lunch"  >-->
+        <!--<span>go for</span>
+        <br>
+        <span>{{choice}}</span>
+    </div>-->
+</div>
+    <div class="text-center" >
+
+        <button class="button" (click)="animate()" onclick="this.disabled=true"
+                style="justify-content: flex-center;display: flex;
+           position:absolute; margin-bottom: 0%; width:35% ; left: 30%; top: 70%;font-size:90%;
+          ">I'm Lucky</button>
+
+    </div>
+
+    <div class="text-center" >
+        <!--style="margin-left:auto;margin-right:auto;display:block;margin-top:90%;margin-bottom:0%;">-->
+        <button class="button" (click)="addItems()" onclick="this.disabled=true"
+                style="justify-content: flex-center;display: flex;
+           position:absolute; margin-bottom: 0%; width:35% ; left: 30%; top: 85%;font-size:90%">Add Item</button>
+    </div>
+</div>
+
+<h2 class="text-right">ORDER</h2>
 <ul>
     <li *ngFor="let order of orders.productOrders">
         {{ order.product.name }} - ${{ order.product.price }} x {{ order.quantity}} pcs.
     </li>
+    <li>
+
+    <span>{{selected}} {{dsPrice}}</span>
+    </li>
+
 </ul>
 <h3 class="text-right">Total amount: ${{ total }}</h3>
 
 <button class="btn btn-primary btn-block" (click)="pay()" *ngIf="!paid">Pay</button>
 
-<div class="alert alert-success" role="alert" *ngIf="paid">
+<div class="alert alert-success" role="alert" *ngIf="paid" style="width:50%;Text-align:center;float:right;" >
     <strong>Congratulation!</strong> You successfully made the order.
 </div>
+
+
+
+
+<!--<i class="material-icons settings" [routerLink]="['/config']">
+    settings
+</i>-->

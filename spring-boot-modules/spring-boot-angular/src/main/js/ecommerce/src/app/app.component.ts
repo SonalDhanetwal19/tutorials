@@ -6,6 +6,7 @@ import {EcommerceService} from "./ecommerce/services/EcommerceService";
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     providers: [EcommerceService]
+
 })
 export class AppComponent {
 
